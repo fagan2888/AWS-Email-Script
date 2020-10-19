@@ -55,7 +55,7 @@ def sendEmail(RECIPIENT, BODY_HTML, BODY_TEXT, SUBJECT):
 
 # Replace with your "From" address.
 # This address must be verified with Amazon SES.
-SENDER = "Varun Jindal <vjindal@umich.edu>"
+SENDER = "Varun Jindal <my_email@domain.edu>"
 
 # If necessary, replace us-east-2 with the AWS Region you're using for Amazon SES.
 AWS_REGION = "us-east-2"
@@ -66,7 +66,8 @@ CHARSET = "UTF-8"
 # Create a new SES resource and specify a region.
 client = boto3.client('ses',region_name=AWS_REGION)
 
-students = pd.read_csv('./testAcaSuccess.csv').to_numpy()
+# replace this with your own CSV
+students = pd.read_csv('./your_csv_goes_here.csv').to_numpy()
 
 # this is the loop that interates over the CSV and sends emails
 for student in students:
